@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taxi/style.css' %}" />
+
+{% if latest_recruit_list %}
+    <ul>
+    {% for recruit in latest_recruit_list %}
+        <li><a href="{% url 'taxi:detail' recruit.id %}">{{ recruit.cont_req }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No taxi are available.</p>
+{% endif %}

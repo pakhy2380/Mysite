@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin - GIST Taxi') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">GIST Taxi administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+<!--
+원래 django 프레임워크에서 일부분만 수정할 때, 이 폴더에 django 파일을 그대로 가져온
+다음, 그걸 수정하면 된다. 원본은 보관되고 overriding되는 것이다.
+-->

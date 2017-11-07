@@ -1,0 +1,9 @@
+<h1>{{ recruit.cont_req }}</h1>
+
+<ul>
+{% for apply in recruit.apply_set.all %}
+    <li>{{ recruit.cont_app }} -- {{ apply.accept }} Accpted by the recuiter{{ apply.accept|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'taxi:detail' recruit.id %}">Vote again?</a>

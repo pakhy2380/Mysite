@@ -1,0 +1,12 @@
+<h1>{{ recruit.cont_req }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'taxi:vote' recruit.id %}" method="post">
+  {% csrf_token %}
+  {% for apply in recruit.apply_set.all %}
+    <input type = "checkbox" name = "apply" id="apply{{forloop.counter}}" value="{{apply.id}}"/>
+    <label for "apply{{forloop.counter}}">{{apply.cont_app}}</label><br />
+    {% endfor %}
+  <input type="submit" value="Vote" />
+</form>
